@@ -18,7 +18,11 @@ int main() {
   Complex *ptr = new Complex(4);
 
   const Complex c4(2, 1);
+
+  cout << "c3: " << c3.real() << " " << c3.image() << endl;
   cout << c4.real() << " " << c4.image() << endl;
+  c3 += c4;
+  cout << "c3: " << c3.real() << " " << c3.image() << endl;
 
   return 0;
 }
