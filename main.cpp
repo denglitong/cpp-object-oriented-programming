@@ -17,5 +17,8 @@ int main() {
   Complex c3(2.1, 2.5);
   Complex *ptr = new Complex(4);
 
+  const Complex c4(2, 1);
+  cout << c4.real() << " " << c4.image() << endl;
+
   return 0;
 }
