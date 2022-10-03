@@ -27,7 +27,9 @@ class Complex {
   double image() const;
 
  private:
-  friend Complex& __doapl(Complex* lhs, const Complex& rhs) {
+  // any definitions in header file should be inline
+  // and any definitions in source file should not be inline
+  inline friend Complex& __doapl(Complex* lhs, const Complex& rhs) {
     lhs->re += rhs.re;
     lhs->im += rhs.im;
     // 返回值为堆上的对象，此时应该返回 引用；
