@@ -3,3 +3,5 @@
 //
 
 #include "Complex.h"
+
+double Complex::image() const { return im; }
