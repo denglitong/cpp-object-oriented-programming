@@ -6,7 +6,12 @@
 #define CPP_OBJECT_ORIENTED_PROGRAMMING_COMPLEX_H
 
 /**
- * 类内部没有包含指针成员的，多数情况下不需要 析构函数
+ * 类内部没有包含指针成员的，多数情况下不需要 析构函数；
+ *
+ * 1.数据成员要放在 private
+ * 2.参数和返回值尽量用 reference 来传
+ * 3.能加 const 的参数和返回值尽量加上
+ * 4.构造函数的initialization list可以简化
  */
 class Complex {
  public:
@@ -27,7 +32,7 @@ class Complex {
   // 但是如果函数很复杂，编译器也无法给它force inline，最后是由编译器决定的
   // 同名函数，重载 overloading
   // return by value
-  double real() const { return re; }
+  double real() const;
 
   // 成员函数分 2 种：一种是会改变成员变量的，另一种是不会改变成员变量的，
   //  对于不会改变成员变量的，声明时加上 const，防止外部取到之后改变数据，
@@ -38,12 +43,15 @@ class Complex {
 
  private:
   double re, im;
+
   // 参数传递：pass by reference (to const)
   // 返回值传递: return by reference (to const)
   // C++ friend 友员可以自由取得对方的 private 成员 而无需通过成员函数
   friend Complex& __doapl(Complex* lhs, const Complex& rhs) {
     lhs->re += rhs.re;
     lhs->im += rhs.im;
+    // 返回值为堆上的对象，此时应该返回 引用；
+    // 如果返回值为栈上的变量，此时应该返回 值，因为栈上变量随函数结束而销毁；
     return *lhs;
   }
 };

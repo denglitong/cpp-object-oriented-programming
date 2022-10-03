@@ -4,6 +4,8 @@
 
 #include "Complex.h"
 
+double Complex::real() const { return re; }
+
 double Complex::image() const { return im; }
 
 Complex& Complex::operator+=(const Complex& rhs) {
