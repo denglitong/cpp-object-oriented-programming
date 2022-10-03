@@ -24,5 +24,9 @@ int main() {
   c3 += c4;
   cout << "c3: " << c3.real() << " " << c3.image() << endl;
 
+  Complex c5, c6(1, 1), c7(2, 2);
+  c5 = c6 + c7;
+  cout << "c5: " << c5.real() << " " << c5.image() << endl;
+
   return 0;
 }
