@@ -5,6 +5,10 @@
 #ifndef CPP_OBJECT_ORIENTED_PROGRAMMING_COMPLEX_H
 #define CPP_OBJECT_ORIENTED_PROGRAMMING_COMPLEX_H
 
+#include <iostream>
+
+using namespace std;
+
 /**
  * 类内部没有包含指针成员的，多数情况下不需要 析构函数；
  *
@@ -47,5 +51,20 @@ class Complex {
 // 头文件会被引用多次，如果定义也放在头文件，则会第二次引入的时候提示函数已被定义的错误
 // 函数声明可以声明多次，但是函数定义只能有一次
 Complex operator+(const Complex& lhs, const Complex& rhs);
+
+// 取正
+Complex operator+(const Complex& x);
+
+// 取反
+Complex operator-(const Complex& x);
+
+bool operator==(const Complex& x, const Complex& y);
+
+// 共轭复数
+Complex conj(const Complex& x);
+
+// 重载 << 输出到 ostream
+// cout << Complex, cout 是第一个参数 ostream& os, Complex 是第二个参数
+ostream& operator<<(ostream& os, const Complex& x);
 
 #endif  // CPP_OBJECT_ORIENTED_PROGRAMMING_COMPLEX_H
