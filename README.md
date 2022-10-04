@@ -1,8 +1,8 @@
 # C++面向对象高级编程
 
-https://www.youtube.com/playlist?list=PL-X74YXt4LVZ137kKM5dNfCIC4tsScerb
+[C++面向对象高级编程（侯捷）](https://www.youtube.com/playlist?list=PL-X74YXt4LVZ137kKM5dNfCIC4tsScerb)
 
-## 学习书籍
+## 参考书籍
 
 1. C++ Primer 第五版
 2. The C++ Programming Language 第四版
